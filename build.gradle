@@ -1,0 +1,58 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // H2 Database
+    implementation 'com.h2database:h2:2.2.224'
+
+    // JSON processing
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.16.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
+
+    // Cryptography
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.77'
+    implementation 'org.bouncycastle:bcpkix-jdk18on:1.77'
+
+    // HTTP Server and REST API
+    implementation 'io.javalin:javalin:6.1.3'
+    implementation 'org.eclipse.jetty:jetty-server:11.0.19'
+
+    // Networking
+    implementation 'io.netty:netty-all:4.1.104.Final'
+
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
+
+    // Testing
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+application {
+    mainClass = 'com.mahala.MahalaNode'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'com.mahala.MahalaNode'
+        )
+    }
+}
