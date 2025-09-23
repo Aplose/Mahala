@@ -121,11 +121,7 @@ public class MahalaNode implements P2PMessageListener {
         logger.info("Handshake received from {}: {}", peerId, message.getPayload());
 
         P2PMessage response = new P2PMessage("HANDSHAKE_ACK", nodeId, "Hello from " + nodeId);
-        p2pNode.sendMessage(p2pNode.getConnectedPeers().stream()
-            .filter(peer -> peer.equals(peerId))
-            .findFirst()
-            .map(peer -> null)
-            .orElse(null), response);
+        p2pNode.sendMessage(p2pNode.getChannelForPeer(peerId), response);
     }
 
     private void handleTransaction(String peerId, P2PMessage message) {

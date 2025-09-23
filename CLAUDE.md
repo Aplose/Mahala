@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Java-based cryptocurrency node project called "Mahala" built with Gradle. The project implements a blockchain node with modules for cryptocurrency functionality including blockchain operations, cryptography, networking, storage, wallet management, consensus mechanisms, and API endpoints.
+This is a Java-based cryptocurrency node project called "Mahala" built with Maven. The project implements a blockchain node with modules for cryptocurrency functionality including blockchain operations, cryptography, networking, storage, wallet management, consensus mechanisms, and API endpoints.
 
 ## Core Project Rules and Objectives
 
@@ -49,23 +49,23 @@ This is a Java-based cryptocurrency node project called "Mahala" built with Grad
 ## Build and Development Commands
 
 ### Build
-- `./gradlew build` - Build the entire project
-- `./gradlew compileJava` - Compile Java sources only
-- `./gradlew jar` - Create JAR file
+- `mvn compile` - Compile Java sources only
+- `mvn package` - Build the entire project and create JAR file
+- `mvn clean package` - Clean and build the entire project
 
 ### Running
-- `./gradlew run` - Run the application (main class: com.mahala.MahalaNode)
-- `java -jar build/libs/mahala.jar` - Run the built JAR
+- `mvn exec:java` - Run the application (main class: com.mahala.MahalaNode)
+- `java -jar target/mahala-1.0.0.jar` - Run the built JAR
 
 ### Testing
-- `./gradlew test` - Run all tests with JUnit Jupiter
-- `./gradlew test --tests ClassName` - Run specific test class
-- `./gradlew test --tests ClassName.methodName` - Run specific test method
+- `mvn test` - Run all tests with JUnit Jupiter
+- `mvn test -Dtest=ClassName` - Run specific test class
+- `mvn test -Dtest=ClassName#methodName` - Run specific test method
 
-### Other Gradle Tasks
-- `./gradlew clean` - Clean build artifacts
-- `./gradlew check` - Run all checks (tests, etc.)
-- `./gradlew tasks` - List all available tasks
+### Other Maven Tasks
+- `mvn clean` - Clean build artifacts
+- `mvn verify` - Run all checks (tests, etc.)
+- `mvn help:describe -Dplugin=org.apache.maven.plugins:maven-compiler-plugin` - Get help for specific plugins
 
 ## Architecture
 

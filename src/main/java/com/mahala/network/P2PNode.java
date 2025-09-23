@@ -171,4 +171,8 @@ public class P2PNode {
     public List<String> getConnectedPeers() {
         return List.copyOf(connectedPeers.keySet());
     }
+
+    public Channel getChannelForPeer(String peerId) {
+        return connectedPeers.get(peerId);
+    }
 }
