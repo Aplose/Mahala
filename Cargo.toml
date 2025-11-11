@@ -12,8 +12,8 @@ resolver = "2"
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
-authors = ["Mahala Team"]
-license = "MIT"
+authors = ["Mahala Team <team@mahala.org>"]
+license = "GPL-3.0"
 
 [workspace.dependencies]
 # Async runtime
