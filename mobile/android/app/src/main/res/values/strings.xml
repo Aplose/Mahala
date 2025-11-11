@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mahala</string>
+    <string name="create_wallet">Créer avec biométrie</string>
+    <string name="balance">Solde Mahala</string>
+    <string name="daily_du">Dividende Universel</string>
+    <string name="sync">Synchroniser</string>
+    <string name="refresh">Actualiser</string>
+</resources>
+

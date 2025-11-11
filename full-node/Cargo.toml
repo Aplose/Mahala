@@ -1,0 +1,42 @@
+[package]
+name = "mahala-full-node"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "mahala-node"
+path = "src/main.rs"
+
+[dependencies]
+# Workspace dependencies
+mahala-blockchain = { path = "../blockchain" }
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+chrono.workspace = true
+
+# Web server
+actix-web = "4.4"
+actix-rt = "2.9"
+actix-cors = "0.7"
+
+# P2P (simplifié pour l'instant, sera implémenté plus tard)
+# libp2p = { version = "0.53", features = ["tcp", "websocket", "noise", "yamux"] }
+
+# Database
+rocksdb = "0.21"
+
+# Logging
+tracing.workspace = true
+tracing-subscriber.workspace = true
+env_logger = "0.11"
+
+# Config
+config = "0.14"
+
+# Hex encoding
+hex = "0.4"

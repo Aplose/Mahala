@@ -1,0 +1,21 @@
+[package]
+name = "mahala-ffi"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+# Workspace dependencies
+mahala-light-client = { path = "../light-client" }
+mahala-blockchain = { path = "../blockchain" }
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+
+# FFI
+hex = "0.4"

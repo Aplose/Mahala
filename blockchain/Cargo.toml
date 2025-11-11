@@ -1,0 +1,21 @@
+[package]
+name = "mahala-blockchain"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+# Workspace dependencies
+serde.workspace = true
+serde_json.workspace = true
+ed25519-dalek.workspace = true
+blake3.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+
+# Additional dependencies
+hex = "0.4"
+rand = "0.8"
